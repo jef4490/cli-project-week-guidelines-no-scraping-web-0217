@@ -1,4 +1,13 @@
-describe 'Something' do
+describe 'NewYorkTimesAPI' do
+
+  let (:API_requestor) { NewYorkTimesAPI.new("X-men") }
+
+    it "creates a new search object" do
+      x = NewYorkTimesAPI.new("Home Alone")
+      expect(NewYorkTimesAPI.all).to include(:API_requestor)
+    end
+
+
 
   # before(:each) usually goes up top, for example:
   # before(:each) do
