@@ -15,6 +15,14 @@ class Film
     @@all
   end
 
+  def self.clear_results
+    @@all = {}
+  end
+
+  def self.none?
+    self.all == {}
+  end
+
   def grab_the_data
     self.title = self.movie_data.fetch("display_title")
     self.year = self.movie_data.fetch("publication_date")[0..3]

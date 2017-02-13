@@ -24,10 +24,18 @@ class NewYorkTimesAPI
 
   def create_movie_results
     self.search_results.fetch("results").each do |movie_hash|
-      # MovieReviewsCli.maybe_more if self.search_results.fetch("has_more")
       movie = Film.new(movie_hash)
     end
+    # MovieReviewsCli.maybe_more if self.search_results.fetch("has_more")
     Film.all
+  end
+
+  def more_results?
+    MovieReviewsCli.maybe_more if self.search_results.fetch("has_more")
+  end
+
+  def self.clear_results
+    @@all = []
   end
 
   def self.all

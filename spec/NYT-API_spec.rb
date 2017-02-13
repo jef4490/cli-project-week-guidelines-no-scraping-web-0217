@@ -4,7 +4,7 @@ describe 'NewYorkTimesAPI' do
 
     it "creates a new search object" do
       x = NewYorkTimesAPI.new("Home Alone")
-      expect(NewYorkTimesAPI.all).to include(:API_requestor)
+      expect(NewYorkTimesAPI.all.counts).to eq(1)
     end
 
 
@@ -24,7 +24,7 @@ describe 'NewYorkTimesAPI' do
   # end
 
   it "I changed this boolean to true when I finished this lab" do
-    done = false
+    done = true
     expect(done).to eq(true)
   end
 
